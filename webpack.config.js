@@ -1,10 +1,11 @@
 const path = require('path')
+const webpack = require('webpack');  //热更新需要用到
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  // mode: 'development',
+  mode: 'development',
   entry: ['babel-polyfill', './src/index.js'],
   output: {
     filename: 'main.[hash:4].js',
@@ -60,18 +61,20 @@ module.exports = {
     ]
   },
   devServer: {
+    host: 'localhost',      // 默认是localhost
     historyApiFallback: true,   // 所有路径都会执行html，刷新不会404
     open: true,            //自动打开浏览器
     progress: true,         //启动服务器的显示进度
     // contentBase: './build',  //这里到底啥意思,写不写都没事啊
     port: 3000, //默认的端口是8080
+    hot: true               // 注意，不用配置都会自动刷新的，自动刷新不等于热更新。而这个hot是热更新的第一步配置，但仅仅这样是不行的，需要做其他的配置。
   },
   plugins: [
-
+    new webpack.HotModuleReplacementPlugin(),  //热更新
     new CleanWebpackPlugin(['./build']),
     new MiniCssExtractPlugin({
       filename: "[name].css",
-      // chunkFilename: "[id].css"  //=> 这个作用是?
+      // chunkFilename: "[id].css"  //这特么是个啥，带不带没区别啊
     }),
     new HtmlWebpackPlugin({
       template: './public/index.html',
@@ -158,3 +161,22 @@ module.exports = {
       // }
 
       // url-loader 解析图片svg等
+
+
+      // 关于热更新
+      // let webpack = require('webpack');
+      // module.exports = {
+      //     plugins: [
+      //         new webpack.HotModuleReplacementPlugin()
+      //     ],
+      //     devServer: {
+      //         contentBase: './BUILD',
+      //         hot: true,
+      //         port: 3000
+      //     }
+      // }
+      // 在入口文件中
+      // if (module.hot) {
+
+      //   module.hot.accept();
+      // }
