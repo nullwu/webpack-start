@@ -4,6 +4,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+
+function resolve(dir) {
+  return path.join(__dirname, dir)
+}
+
 module.exports = {
   mode: 'development',
   entry: ['babel-polyfill', './src/index.js'],
@@ -82,6 +87,15 @@ module.exports = {
     })
 
   ],
+  resolve: {
+    extensions: ['.js', '.vue', '.json', '.scss'],
+    alias: {
+      '@': resolve('src')
+    }
+  },
+
+
+
 }
 
 // "babel-loader"用最新版本8+的要出事,暂时锁定在7版本

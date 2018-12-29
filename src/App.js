@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {BrowserRouter, Route,NavLink} from 'react-router-dom'
 
-import Home from './pages/home'
-import Post from './pages/post'
-import Tag from './pages/tag'
+import Home from '@/pages/home'
+import Post from '@/pages/post'
+import Tag from '@/pages/tag'
 
-import './style.scss'
+import './style'
 
 class App extends Component{
     render(){
