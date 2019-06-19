@@ -70,7 +70,7 @@ module.exports = {
     historyApiFallback: true,   // 所有路径都会执行html，刷新不会404
     open: true,            //自动打开浏览器
     progress: true,         //启动服务器的显示进度
-    // contentBase: './build',  //这里到底啥意思,写不写都没事啊
+    // contentBase: './build',  // 运行时的根目录 默认就是 上面定义的output path ，所以这里不写也不伤大雅
     port: 3000, //默认的端口是8080
     hot: true               // 注意，不用配置都会自动刷新的，自动刷新不等于热更新。而这个hot是热更新的第一步配置，但仅仅这样是不行的，需要做其他的配置。
   },
