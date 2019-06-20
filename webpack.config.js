@@ -194,3 +194,13 @@ module.exports = {
 
       //   module.hot.accept();
       // }
+
+
+
+//关于package.json的命令
+ //"build": "webpack",
+  //  "dev": "webpack-dev-server",
+ // 如果不加配置，自动去寻找webpack.config.js文件执行webpack命令
+  //指定配置文件如下
+  //  "dev": "webpack-dev-server --config ./webpack.dev.config.js --mode development"
+      
