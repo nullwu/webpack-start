@@ -120,13 +120,13 @@ module.exports = {
    //  并且它的主要目的并不在此，因此这两个插件都需要加
   //  参考：https://blog.csdn.net/chiuwingyan/article/details/80777016
 
-//babel-preset-env
-  // 她包含了babel-preset-es 和 babel-preset-stag-4
-  //所以我们需要安装env和preset-stage-0
+//babel-preset-env 包含了 babel-preset-es 和 babel-preset-stag-4
+   //所以我们还需要安装babel-preset-stage-0
+
 // babel-preset-react
   //  顾名思义，用来解析react的
 
-//babelrc 专门用来配置babel的
+//.babelrc文件 专门用来配置babel的
     // {
     //   "presets": ["react","env", "stage-0"]  ,
     //   "plugins": [ "transform-runtime"]
