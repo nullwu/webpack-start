@@ -1,4 +1,4 @@
 ```js
-npm run build
-npm run vue
+npm run build  (打包react)
+npm run vue     (打包vue)
 ```
