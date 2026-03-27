@@ -1,4 +1,7 @@
-```js
-npm run build  (打包react)
-npm run vue     (打包vue)
-```
+# Amazon SP-API Tool
+
+This project integrates with Amazon SP-API to help sellers manage product catalog, inventory, and listing data.
+
+- Retrieve product listings
+- Manage catalog data
+- Improve seller efficiency
